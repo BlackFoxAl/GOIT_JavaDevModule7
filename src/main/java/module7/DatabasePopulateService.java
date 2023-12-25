@@ -1,10 +1,15 @@
 package module7;
 
-import module7.db.UtilQueries;
+import module7.db.InitTable;
 
 public class DatabasePopulateService {
-    public static void main(String [] args) {
-        String filenamePopulate = "sql/populate_db.sql";
-        new UtilQueries().executeSetQueries(filenamePopulate);
+
+    public static void main(String[] args) {
+        InitTable initTable = new InitTable();
+        initTable.initializationWorker();
+        initTable.initializationClient();
+        initTable.initializationProject();
+        initTable.initializationProjectWorker();
+        initTable.initializationProjectName();
     }
 }
